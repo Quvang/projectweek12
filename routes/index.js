@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 /* GET Country page. */
 router.get('/country', function(req, res, next) {
       //worldHandler.retrieveAllCountries(req, res, next);  // get data from
-      res.render('index', { title: '' });
+      res.render('index', { title: 'Country' });
 });
 
 /* POST Country PAGE */
