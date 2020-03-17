@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 /* GET Country page. */
 router.get('/country', function(req, res, next) {
       //worldHandler.retrieveAllCountries(req, res, next);  // get data from
-      res.render('index', { title: 'Country' });
+      res.render('country', { title: 'Country' });
 });
 
 /* POST Country PAGE */
@@ -33,13 +33,13 @@ router.get('/language', function(req, res, next) {
 /* GET Continents page. */
 router.get('/continent', function(req, res, next) {
       //worldHandler.retrieveAllCountries(req, res, next);  // get data from
-      res.render('index', { title: 'My continent Site' });
+      res.render('continent', { title: 'My Continent Site' });
 });
 
 /* GET Government page. */
 router.get('/governmentform', function(req, res, next) {
       //worldHandler.retrieveAllCountries(req, res, next);  // get data from
-      res.render('index', { title: 'My Government Site' });
+      res.render('governmentform', { title: 'My Government Site' });
 });
 
 module.exports = router;
