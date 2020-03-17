@@ -32,13 +32,11 @@ router.get('/language', function(req, res, next) {
 
 /* GET Continents page. */
 router.get('/continent', function(req, res, next) {
-      //worldHandler.retrieveAllCountries(req, res, next);  // get data from
       res.render('continent', { title: 'My Continent Site' });
 });
 
 /* GET Government page. */
 router.get('/governmentform', function(req, res, next) {
-      //worldHandler.retrieveAllCountries(req, res, next);  // get data from
       res.render('governmentform', { title: 'My Government Site' });
 });
 
