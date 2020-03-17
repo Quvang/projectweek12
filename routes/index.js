@@ -30,4 +30,16 @@ router.get('/language', function(req, res, next) {
   res.render('language', { title: 'My Language site' });
 });
 
+/* GET Continents page. */
+router.get('/continent', function(req, res, next) {
+      //worldHandler.retrieveAllCountries(req, res, next);  // get data from
+      res.render('index', { title: 'My continent Site' });
+});
+
+/* GET Government page. */
+router.get('/governmentform', function(req, res, next) {
+      //worldHandler.retrieveAllCountries(req, res, next);  // get data from
+      res.render('index', { title: 'My Government Site' });
+});
+
 module.exports = router;
