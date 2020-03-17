@@ -1,56 +1,55 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 header {
-    text-align: left;
-    padding: 20px;
-    background: #fff;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+  text-align: left;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
 }
 
 li {
-    display: block;
-    text-align: center;
-    transition: 0.3s;
+  display: block;
+  text-align: center;
+  transition: 0.3s;
 }
 
 li a {
-    display: block;
-    color: #202020;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: #202020;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 li a:hover {
-    color: #fff;
-    background-color: #202020;
-    transition: 0.3s;
+  color: #fff;
+  background-color: #202020;
+  transition: 0.3s;
 }
 
 body {
-    padding: 50px;
-    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-    color: #00b7ff;
+  color: #00b7ff;
 }
 
 g {
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 g:hover {
-    fill: #202020;
+  fill: #202020;
 }
