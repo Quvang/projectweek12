@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <%- include('includes/menu'); -%>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <%- include('includes/scheama'); -%>
+    </head>
+    <body>
+        <%- include('includes/menu'); -%>
 
-  </div>
-  </body>
+        <form id="continentSelectForm" action="/continent" method="POST">
+            <select name="continent" size="1">
+                <% var options = []; %> <% for(var i = 0; i < continents.length; i++) { %>
+                <option value="<%= continents[i].name %>"><%= continents[i].name %></option>
+                <% } %>
+            </select>
+            <input type="submit" value="GOOO" />
+        </form>
+    </body>
 </html>
