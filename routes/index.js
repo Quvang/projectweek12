@@ -18,8 +18,7 @@ router.get('/country', async function(req, res, next) {
 /* POST Country PAGE */
 
 /*router.post('/country', function(req, res, next) {
-      worldHandler.retrieveChosenCountry(req, res, next);
-      res.render('index', { title: 'Leg Med Express' });
+    let countryRetrieve = await modCountry.postCountry({}, { sort: { name: 1 } });
 });*/
 
 /* GET City page. */
