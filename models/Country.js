@@ -20,4 +20,4 @@ const countrySchema = mongoose.Schema({
     code2: String
 });
 
-module.exports = mongoose.model("Country", countrySchema, 'country');
+module.exports = mongoose.model("country", countrySchema, 'country');

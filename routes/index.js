@@ -1,4 +1,3 @@
-const worldHandler = require('../handler/handler');
 var express = require('express');
 var router = express.Router();
 /* Scheamas */
@@ -12,7 +11,8 @@ router.get('/', function(req, res, next) {
 
 /* GET Country page. */
 router.get('/country', async function(req, res, next) {
-    worldHandler.retrieveAllCountries(req, res, next); // get data from
+    let country = await modCountry.getCountries({}, { sort: { name: 1 } });
+    res.render('country', { title: 'My Country site', country: country });
 });
 
 /* POST Country PAGE */

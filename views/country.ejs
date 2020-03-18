@@ -6,11 +6,13 @@
   </head>
   <body>
     <%- include('includes/menu'); -%>
-
-    <div class="countries">
-      <% for(var i = 0; i < country.length; i++) { %>
-        <%= country[i].name %></br>
-      <% } %>
-    </div>
+    <form id="countrySelectForm" action="/country" method="POST">
+        <select name="country" size="1">
+            <% var options = []; %> <% for(var i = 0; i < country.length; i++) { %>
+            <option value="<%= country[i].name %>"><%= country[i].name %></option>
+            <% } %>
+        </select>
+        <input type="submit" value="GOOO" />
+    </form>
   </body>
 </html>
