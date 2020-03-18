@@ -1,15 +1,18 @@
-const worldHandler = require("../handler/handler");
+const worldHandler = require('../handler/handler');
 var express = require('express');
 var router = express.Router();
+/* Scheamas */
+const modContinent = require('../models/handleContinents');
+const modCountry = require('../models/handleCountries');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'World MAP' });
+    res.render('index', { title: 'World MAP' });
 });
 
 /* GET Country page. */
-router.get('/country', function(req, res, next) {
-      worldHandler.retrieveAllCountries(req, res, next);  // get data from
+router.get('/country', async function(req, res, next) {
+    worldHandler.retrieveAllCountries(req, res, next); // get data from
 });
 
 /* POST Country PAGE */
@@ -21,22 +24,24 @@ router.get('/country', function(req, res, next) {
 
 /* GET City page. */
 router.get('/city', function(req, res, next) {
-  res.render('city', { title: 'My Cities site' });
+    res.render('city', { title: 'My Cities site' });
 });
 
 /* GET Language page. */
 router.get('/language', function(req, res, next) {
-  res.render('language', { title: 'My Language site' });
+    res.render('language', { title: 'My Language site' });
 });
 
 /* GET Continents page. */
-router.get('/continent', function(req, res, next) {
-      res.render('continent', { title: 'My Continent Site' });
+router.get('/continent', async function(req, res, next) {
+    let continents = await modContinent.getContinents({}, { sort: { name: 1 } });
+    res.render('continent', { title: 'My Continent site', continents: continents });
+    /* res.json(continents); */ //comment out res.render to view BSON File
 });
 
 /* GET Government page. */
 router.get('/governmentform', function(req, res, next) {
-      res.render('governmentform', { title: 'My Government Site' });
+    res.render('governmentform', { title: 'My Government Site' });
 });
 
 module.exports = router;
