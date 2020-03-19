@@ -17,7 +17,7 @@ router.get('/country/:cont', async function(req, res, next) {
 });
 
 /* Chose Country - Show cities. */
-router.get('/country/:city', async function(req, res, next) {
+router.get('/continent/country/:city', async function(req, res, next) {
     let cities = await modCities.getCities({countrycode: req.params.city}, { sort: { name: 1 } });
     res.json(cities);
 });
