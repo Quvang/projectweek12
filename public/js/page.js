@@ -8,7 +8,7 @@ import {Ajax} from "./modules/Ajax.js";
 const getCities = function(ev) {
     let req = Object.create(Ajax);
     req.init();
-    req.getFile(`/continent/country/:city${ev.target.value}`, showCities);
+    req.getFile(`/country/:cont/:countrycode`, showCities);
 };
 
 /*
