@@ -3,6 +3,8 @@ const mon = require("./mongooseWrap");
 const City = require("./City");
 
 exports.getCities = async function (que, sort) {
+    if (sort === null)
+        sort = {sort: {name: 1}};
     try {
         let cs = await mon.retrieve("localhost", "world", City, que, sort);
         return cs;

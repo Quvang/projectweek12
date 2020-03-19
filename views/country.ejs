@@ -6,14 +6,34 @@
     <%- include('includes/scheama'); -%>
   </head>
   <body>
+
     <%- include('includes/menu'); -%>
-    <form id="countrySelectForm" action="/country" method="POST">
-        <select name="country" size="1">
-            <% var options = []; %> <% for(var i = 0; i < country.length; i++) { %>
-            <option value="<%= country[i].name %>"><%= country[i].name %></option>
-            <% } %>
-        </select>
-        <input type="submit" value="GOOO" />
+
+    <main>
+      <h2>Start by Choosing a Country</h2>
+      <div id="countries">
+        <h3>Choose Country</h3>
+            <select id="chooseCountry">
+                <% var options = []; %> <% for(var i = 0; i < country.length; i++) { %>
+                <option value="<%= country[i].code %>"><%= country[i].name %></option>
+                <% } %>
+            </select>
+                <button id="gcit">Click me</button>
+      </div>
+        
+      <div id="cities">
+        <div id="getcities">
+          <h3>Choose City</h3>
+        </div>
+      </div>
+
+      <div id="data">
+        <div id="citydata">
+          <h3>City Data</h3>
+        </div>
+      </div>
+    </main>
+        
     </form>
   </body>
 </html>

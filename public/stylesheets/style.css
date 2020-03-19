@@ -3,7 +3,9 @@
   padding: 0;
   margin: 0;
 }
-
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 header {
   text-align: left;
   padding: 20px;
@@ -12,44 +14,90 @@ header {
   justify-content: space-between;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
-
 ul {
   list-style-type: none;
   padding: 0;
   display: flex;
 }
-
 li {
   display: block;
   text-align: center;
-  transition: 0.3s;
 }
-
 li a {
   display: block;
   color: #202020;
   padding: 14px 16px;
   text-decoration: none;
 }
-
 li a:hover {
   color: #fff;
   background-color: #202020;
   transition: 0.3s;
 }
-
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+main {
+  padding: 50px;
 }
-
+#countries, #cities, #data {
+  float: left;
+  margin: 1em 1em 0 0;
+  padding: 3px;
+  width: 20%;
+}
+h1 {
+  font-size: 30px;
+  color: #202020;
+}
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #202020;
+  padding-bottom: 20px;
+}
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #202020; 
+}
+h3:after {
+  content:'';
+  display:inline-block;
+  width:100%; height:100%;
+  border-bottom:1px solid #000;
+} 
 a {
   color: #00b7ff;
 }
-
 g {
   transition: 0.3s;
 }
-
 g:hover {
   fill: #202020;
+}
+#gcit, #gdat {
+  background-color: #202020;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 5px 0px;
+  cursor: pointer;
+  width: 50%;
+}
+select {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 30px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: #fff;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #202020;
+  overflow: hidden;
+  padding: 10px 20px;
+  width: 100%;
 }
