@@ -110,3 +110,33 @@ table {
 table td {
   border: 1px solid #202020;
 }
+
+.wrapperCountry{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  background: #eee;
+  margin: 10px auto;
+  position: relative;
+  text-align:center;
+  
+}
+
+.wrapperCity{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  background: #eee;
+  margin: 10px auto;
+  position: relative;
+  text-align:center;
+  
+}
+#data{
+  clear: both;
+  vertical-align: bottom;
+  width: 100%;
+  height: 25px;
+}
