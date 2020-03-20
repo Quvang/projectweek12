@@ -37,7 +37,7 @@ li a:hover {
 main {
   padding: 50px;
 }
-#countries, #cities, #data {
+#continents, #countries, #cities, #data {
   float: left;
   margin: 1em 1em 0 0;
   padding: 3px;
@@ -73,7 +73,7 @@ g {
 g:hover {
   fill: #202020;
 }
-#gcit, #gdat {
+button {
   background-color: #202020;
   border: none;
   color: white;
@@ -81,7 +81,7 @@ g:hover {
   text-decoration: none;
   margin: 5px 0px;
   cursor: pointer;
-  width: 50%;
+  width: 100%;
 }
 select {
   -webkit-appearance: button;
