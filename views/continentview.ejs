@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <%- include('includes/scheama'); -%>
+    </head>
+    <body>
+        <%- include('includes/menu'); -%>
+
+
+                <% var options = []; %> <% for(var i = 0; i < showcountry.length; i++) { %>
+                <%= showcountry[i].name %><br>
+                <% } %>
+
+    </body>
+</html>
