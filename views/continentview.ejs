@@ -7,11 +7,14 @@
     </head>
     <body>
         <%- include('includes/menu'); -%>
-
-
+        <main>
+          <table>
+               <tr><th>Land:</th></tr>
                 <% var options = []; %> <% for(var i = 0; i < showcountry.length; i++) { %>
-                <%= showcountry[i].name %><br>
+                <tr><td><%= showcountry[i].name %></td></tr>
                 <% } %>
 
+          </table>
+        </main>
     </body>
 </html>

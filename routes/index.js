@@ -18,6 +18,11 @@ router.get('/country', async function(req, res, next) {
     res.render('country', { title: 'Country Data', country: country });
 });
 
+router.get('/city', async function(req, res, next) {
+    res.render('city', { title: 'City Data'});
+});
+
+
 router.get('/continents', async function(req, res, next) {
     let continents = await modContinent.getContinents({}, {sort: {name: 1}});
     res.json(continents);
@@ -38,16 +43,7 @@ router.get('/:cont', async function(req, res, next) {
     let showcountry = await modCountry.getCountries({continent: req.params.cont}, { sort: { name: 1 } });
     res.render('continentview', { title: 'Country Data', showcountry: showcountry });
 });
-/*
 
-router.get('/cities/', async function(req, res, next) {
-    let cities = await modCities.getCities({country: req.params.code}, {sort: {name: 1}});
-    res.json(cities);
-});
-*/
-/* GET City page. */
-router.get('/city', function(req, res, next) {
-    res.render('city', { title: 'City Data' });
-});
+
 
 module.exports = router;
