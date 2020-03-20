@@ -103,10 +103,10 @@ select {
 }
 
 table {
-  border: 1px solid black;
+  border: 1px solid #202020;
   margin: 0 auto;
 }
 
 table td {
-  border: 1px solid black;
+  border: 1px solid #202020;
 }
