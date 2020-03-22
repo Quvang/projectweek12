@@ -13,6 +13,16 @@ exports.getCountries = async function (que, sort) {
     }
 }
 
+exports.delCountries = async function (name) {
+    
+    try {
+        let cs = await mon.remove("localhost", "world", Country, name);
+        return cs;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 exports.postCountry = async function (req) {
     let chk = { name: req.body.name };  // check object for existence
     let country = new Country({                     // create obejct in db-format

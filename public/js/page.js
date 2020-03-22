@@ -90,17 +90,21 @@ const showDataCountry = function (e) {
     let popu = document.createTextNode("Population");
     let th5 = document.createElement('th');
     let gov = document.createTextNode("Govermentform");
+    let th6 = document.createElement('th');
+    let del= document.createTextNode("delete");
     
     th1.appendChild(name);
     th2.appendChild(cc);
     th3.appendChild(con);
     th4.appendChild(popu);
     th5.appendChild(gov);
+    th6.appendChild(del);
     tabel.appendChild(th1);
     tabel.appendChild(th2);
     tabel.appendChild(th3);
     tabel.appendChild(th4);
     tabel.appendChild(th5);
+    tabel.appendChild(th6);
 
     countries.forEach(function(country) {
         
@@ -115,17 +119,32 @@ const showDataCountry = function (e) {
         let popu1 = document.createTextNode(country.population);
         let td5 = document.createElement('td');
         let gov1 = document.createTextNode(country.governmentform);
+        let td6 = document.createElement('td');
+        let form = document.createElement('form');
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "/country");
+
+        let input = document.createElement('input');
+        input.setAttribute("value", country.name);
+        input.setAttribute("name", "slet");
+        input.setAttribute("type", "hidden");
+        
+        let delB = document.createElement('button');
+        delB.setAttribute('class', "Delete");
 
         td1.appendChild(name1);
         td2.appendChild(cc1);
         td3.appendChild(con1);
         td4.appendChild(popu1);
         td5.appendChild(gov1);
+        td6.appendChild(form);
+        form.appendChild(delB);
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
         tr.appendChild(td4);
         tr.appendChild(td5);
+        tr.appendChild(td6);
         tabel.appendChild(tr);
     });
 

@@ -17,6 +17,13 @@ router.get('/country', async function(req, res, next) {
     let country = await modCountry.getCountries({}, { sort: { name: 1 } });
     res.render('country', { title: 'Country Data', country: country });
 });
+
+// Country delete 
+router.post('/country', async function(req, res, next) {
+    let delCountry = await modCountry.delCountries({name: req.body.value});
+    console.log("Hey");
+    res.render('country', { title: 'Country Data', delCountry: delCountry });
+});
 /* GET City page. */
 router.get('/city', async function(req, res, next) {
     res.render('city', { title: 'City Data' });
