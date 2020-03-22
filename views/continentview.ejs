@@ -9,11 +9,18 @@
         <%- include('includes/menu'); -%>
         <main>
           <table>
-               <tr><th>Land:</th></tr>
+                <th colspan="">Countries</th>
+                <th colspan="">Country Code</th>
+                <th colspan="">Population</th>
+                <th colspan="">Governmentform</th>
                 <% var options = []; %> <% for(var i = 0; i < showcountry.length; i++) { %>
-                <tr><td><%= showcountry[i].name %></td></tr>
+                <tr>
+                    <td><%= showcountry[i].name %></td>
+                    <td><%= showcountry[i].code %></td>
+                    <td><%= showcountry[i].population%></td>
+                    <td><%= showcountry[i].governmentform%></td>
+                </tr>
                 <% } %>
-
           </table>
         </main>
     </body>

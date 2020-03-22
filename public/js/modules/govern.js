@@ -12,10 +12,10 @@ const getCountries = function(ev) {
     req.init();
     req.getFile(`/countries/${ev.target.value}`, showCountries);
 };
-const getDataCountry = function(ev) {
+const getLanguage = function(ev) {
     let req = Object.create(Ajax);
     req.init();
-    req.getFile(`/countrydata/${ev.target.value}`, showDataCountry);
+    req.getFile(`/languages/${ev.target.value}`, showLang);
 };
 //Show Continents
 const showContinents = function(e) {
@@ -54,7 +54,7 @@ const showCountries = function (e) {
     let countries = JSON.parse(e.target.responseText);
     let sel = document.createElement('select');
     sel.setAttribute('id', 'chooseCountry');
-    sel.addEventListener('change', getDataCountry);
+    sel.addEventListener('change', getLanguage);
     countries.forEach(function(country) {
         let opt = document.createElement('option');
         let opttext = document.createTextNode(country.name);
@@ -66,18 +66,18 @@ const showCountries = function (e) {
     $("countdata").appendChild(div);
 };
 //Show Country data
-const showDataCountry = function (e) {
+const showLang = function (e) {
     console.log(e.target.getResponseHeader("Content-Type"));
-    let element = $("countrydata");
+    let element = $("langdata");
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
     let div = document.createElement("div");
     let h3 = document.createElement('h2');
-    let txt = document.createTextNode('Country data');
+    let txt = document.createTextNode('Language');
     h3.appendChild(txt);
     div.appendChild(h3);
-    let countries = JSON.parse(e.target.responseText);
+    let languages = JSON.parse(e.target.responseText);
     let div1 = document.createElement("div");
     let tabel = document.createElement("table");
     let th1 = document.createElement('th');
@@ -85,53 +85,45 @@ const showDataCountry = function (e) {
     let th2 = document.createElement('th');
     let cc = document.createTextNode("Country Code");
     let th3 = document.createElement('th');
-    let con = document.createTextNode("Continent");
+    let off = document.createTextNode("Official");
     let th4 = document.createElement('th');
-    let popu = document.createTextNode("Population");
-    let th5 = document.createElement('th');
-    let gov = document.createTextNode("Govermentform");
+    let per = document.createTextNode("Percentage");
     
     th1.appendChild(name);
     th2.appendChild(cc);
-    th3.appendChild(con);
-    th4.appendChild(popu);
-    th5.appendChild(gov);
+    th3.appendChild(off);
+    th4.appendChild(per);
     tabel.appendChild(th1);
     tabel.appendChild(th2);
     tabel.appendChild(th3);
     tabel.appendChild(th4);
-    tabel.appendChild(th5);
 
-    countries.forEach(function(country) {
+    languages.forEach(function(countrylanguage) {
         
         let tr = document.createElement('tr');
         let td1 = document.createElement('td');
-        let name1 = document.createTextNode(country.name);
+        let name1 = document.createTextNode(countrylanguage.language);
         let td2 = document.createElement('td');
-        let cc1 = document.createTextNode(country.code);
+        let cc1 = document.createTextNode(countrylanguage.countrycode);
         let td3 = document.createElement('td');
-        let con1 = document.createTextNode(country.continent);
+        let off1 = document.createTextNode(countrylanguage.isofficial);
         let td4 = document.createElement('td');
-        let popu1 = document.createTextNode(country.population);
-        let td5 = document.createElement('td');
-        let gov1 = document.createTextNode(country.governmentform);
+        let per1 = document.createTextNode(countrylanguage.percentage);
 
         td1.appendChild(name1);
         td2.appendChild(cc1);
-        td3.appendChild(con1);
-        td4.appendChild(popu1);
-        td5.appendChild(gov1);
+        td3.appendChild(off1);
+        td4.appendChild(per1);
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
         tr.appendChild(td4);
-        tr.appendChild(td5);
         tabel.appendChild(tr);
     });
 
     div1.appendChild(tabel);
-    $("countrydata").appendChild(div);
-    $("countrydata").appendChild(div1);
+    $("langdata").appendChild(div);
+    $("langdata").appendChild(div1);
 };
 
 window.addEventListener("load", getContinents);                   // kick off JS

@@ -3,9 +3,32 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%- include('includes/langscript'); -%>
   </head>
   <body>
     <%- include('includes/menu'); -%>
+
+    <main>
+      <h2>Start by Choosing a Continent</h2>
+      <div class="wrapperCity">
+        <div id="continents">
+          <h3>Continents</h3>
+          <div id="contdata"></div>
+      </div>
+
+
+      <div id="countries">
+        <div id="countdata">
+          <h3>Countries</h3>
+        </div>
+      </div>
+      </div>
+      
+      <div id="data">
+        <div id="langdata">
+        </div>
+      </div>
+    </main>
 
   </div>
   </body>
