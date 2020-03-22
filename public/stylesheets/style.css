@@ -1,148 +1,226 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 header {
-  text-align: left;
-  padding: 20px;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+    text-align: left;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.05);
 }
 ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
 }
 li {
-  display: block;
-  text-align: center;
+    display: block;
+    text-align: center;
 }
 li a {
-  display: block;
-  color: #202020;
-  padding: 14px 16px;
-  text-decoration: none;
+    display: block;
+    color: #202020;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 li a:hover {
-  color: #fff;
-  background-color: #202020;
-  transition: 0.3s;
+    color: #fff;
+    background-color: #202020;
+    transition: 0.3s;
 }
 main {
-  padding: 50px;
+    padding: 50px;
 }
-#continents, #countries, #cities {
-  float: left;
-  margin: 1em 1em 0 0;
-  padding: 3px;
-  width: 30%;
+#continents,
+#countries,
+#cities {
+    float: left;
+    margin: 1em 1em 0 0;
+    padding: 3px;
+    width: 30%;
 }
 h1 {
-  font-size: 30px;
-  color: #202020;
+    font-size: 30px;
+    color: #202020;
 }
 h2 {
-  font-size: 20px;
-  font-weight: bold;
-  color: #202020;
-  padding-bottom: 20px;
-  position: relative;
-  text-align:center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #202020;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
 }
 h3 {
-  font-size: 14px;
-  font-weight: bold;
-  color: #202020;
+    font-size: 14px;
+    font-weight: bold;
+    color: #202020;
 }
 h3:after {
-  content:'';
-  display:inline-block;
-  width:100%; height:100%;
-  border-bottom:1px solid #000;
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #000;
 }
 a {
-  color: #00b7ff;
+    color: #00b7ff;
 }
 g {
-  transition: 0.3s;
+    transition: 0.3s;
 }
 g:hover {
-  fill: #202020;
+    fill: #202020;
 }
 button {
-  background-color: #202020;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  margin: 5px 0px;
-  cursor: pointer;
-  width: 100%;
+    background-color: #202020;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px 0px;
+    cursor: pointer;
+    width: 100%;
 }
 select {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -webkit-padding-end: 30px;
-  -moz-padding-end: 20px;
-  -webkit-padding-start: 2px;
-  -moz-padding-start: 2px;
-  background-color: #fff;
-  border: 1px solid #AAA;
-  border-radius: 2px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  color: #202020;
-  overflow: hidden;
-  padding: 10px 20px;
-  width: 100%;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 30px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #202020;
+    overflow: hidden;
+    padding: 10px 20px;
+    width: 100%;
 }
-table, td, th {
-  color: #202020;
-  border: 1px solid #202020;
-  padding: 10px;
-  text-align: left;
+table,
+td,
+th {
+    color: #202020;
+    border: 1px solid #202020;
+    padding: 10px;
+    text-align: left;
 }
 table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
 }
-.wrapperCountry{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 50%;
-  padding: 50px;
-  background: #eee;
-  margin: 10px auto;
-  position: relative;
-  text-align:center;
+.wrapperCountry {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 50px;
+    background: #eee;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
 }
-.wrapperCity{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 50%;
-  padding: 50px;
-  background: #eee;
-  margin: 10px auto;
-  position: relative;
-  text-align:center;
+.wrapperCity {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    padding: 50px;
+    background: #eee;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
 }
-#data{
-  clear: both;
-  vertical-align: bottom;
-  width: 50%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin: 10px auto;
-  position: relative;
-  text-align:center;
+.wrapperCreate {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    background: #eee;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
+}
+
+#createCountry,
+#createCity,
+#createContinent,
+#createLanguage,
+#createGovernmentForm {
+    width: 60%;
+    margin-top: 2rem;
+}
+
+label {
+    /* Other styling... */
+    text-align: right;
+    clear: both;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+input {
+    /* Other styling... */
+    text-align: left;
+    float: right;
+    width: 50%;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+#createCountry select,
+#createCity select,
+#createContinent select,
+#createLanguage select,
+#createGovernmentForm select {
+    text-align: left;
+    float: right;
+    width: 50%;
+    padding: 0px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+#createCountry input[type='submit'],
+#createCity input[type='submit'],
+#createContinent input[type='submit'],
+#createLanguage input[type='submit'],
+#createGovernmentForm input[type='submit'] {
+    background-color: #202020;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 5px 0px;
+    cursor: pointer;
+    width: 50%;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.wrapperCreate p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #202020;
+}
+#data {
+    clear: both;
+    vertical-align: bottom;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 10px auto;
+    position: relative;
+    text-align: center;
 }

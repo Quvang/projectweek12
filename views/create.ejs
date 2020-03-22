@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="/js/modules/nQuery.js"></script>
+    </head>
+    <body>
+        <%- include('includes/menu'); -%>
+
+        <main>
+            <div class="wrapperCreate">
+            <!--Continent-->
+                <form id="createContinent" action="/createContinent" method="post">
+                    <h3>Create Continent Data</h3>
+                    <label for="name"><p>Continent Name</p></label>
+                    <input id="name" type="text" name="name" placeholder="Africa, Asia, Europe.." required />
+
+                    <br />
+                    <input type="submit" value="Create" />
+                </form>
+
+            <!--Country-->
+                <form id="createCountry" action="/createCountry" method="post">
+                    <h3>Create Country Data</h3>
+                    <label for="name"><p>Country Name</p></label>
+                    <input id="name" type="text" name="name" placeholder="Denmark, Germany, United Kingdom.." required />
+
+                    <label for="localname"><p>Local Country Name</p></label>
+                    <input id="localname" type="text" name="localname" placeholder="Please enter the localname of the country.." />
+
+                    <label for="code"><p>Country Code</p></label>
+                    <input id="code" type="text" name="code" placeholder="DNK, DEU, GBR.." required />
+
+                    <label for="code2"><p>Short Countrycode</p></label>
+                    <input id="code2" type="text" name="code2" placeholder="Please enter 2 character Country Code" required />
+
+                    <label for="continent"><p>Continent</p></label>
+                    <select name="continent" id="continent" required>
+                        <option value="" selected disabled>--Select Continent--</option>
+                        <% for(var i=0; i<continents.length; i++) { %>
+                        <option value="<%= continents[i].name%>"><%= continents[i].name %></option>
+                        <% } %>
+                    </select>
+
+                    <label for="region"><p>Region</p></label>
+                    <input id="region" type="text" name="region" placeholder="South, North, Central.." required />
+
+                    <label for="surfacearea"><p>Area in sq km</p></label>
+                    <input id="surfacearea" type="text" name="surfacearea" placeholder="Please enter area size.." required />
+
+                    <label for="indepyear"><p>Year of independence</p></label>
+                    <input id="indepyear" type="text" name="indepyear" placeholder="Please enter a year.." required />
+
+                    <label for="population"><p>Population</p></label>
+                    <input id="population" type="text" name="population" placeholder="Please enter population size.." required />
+
+                    <label for="lifeexpectancy"><p>Life expectancy</p></label>
+                    <input id="lifeexpectancy" type="text" name="lifeexpectancy" placeholder="Please enter lifeexpectancy age.." required />
+
+                    <label for="gnp"><p>GNP</p></label>
+                    <input id="gnp" type="text" name="gnp" placeholder="Please enter gnp" required />
+
+                    <label for="gnpold"><p>Prev GNP</p></label>
+                    <input id="gnpold" type="text" name="gnpold" placeholder="Please enter old gnp" required />
+
+                    <label for="governmentform"><p>Government Form</p></label>
+                    <select name="governmentform" id="governmentform" required>
+                        <option value="" selected disabled>--Select Governmentform--</option>
+                        <% for(var i=0; i<governmentforms.length; i++) { %>
+                        <option value="<%= governmentforms[i].name%>"><%= governmentforms[i].name %></option>
+                        <% } %>
+                    </select>
+
+                    <label for="headofstate"><p>Head of State</p></label>
+                    <input id="headofstate" type="text" name="headofstate" placeholder="Please enter Head of State.." required />
+
+                    <br />
+                    <input type="submit" value="Create" />
+                </form>
+            
+            <!--City-->
+                <form id="createCity" action="/createCity" method="post">
+                    <h3>Create City Data</h3>
+                    <label for="name"><p>City Name</p></label>
+                    <input id="name" type="text" name="name" placeholder="København, Berlin, London.." required />
+
+                    <label for="countrycode"><p>Countrycode</p></label>
+                    <select name="countrycode" id="countrycode" required>
+                        <option value="" selected disabled>--Select Countrycode--</option>
+                        <% for(var i=0; i<cities.length; i++) { %>
+                        <option value="<%= cities[i].countrycode%>"><%= cities[i].countrycode %></option>
+                        <% } %>
+                    </select>
+
+                    <label for="district"><p>State</p></label>
+                    <input id="district" type="text" name="district" placeholder="Sønderjyland, New York, Berlin" required />
+
+                    <label for="population"><p>Population</p></label>
+                    <input id="population" type="text" name="population" placeholder="Please enter a number.." required />
+
+                    <br />
+                    <input type="submit" value="Create" />
+                </form>
+
+            <!--Language-->
+                <form id="createLanguage" action="/createLanguage" method="post">
+                    <h3>Create Language Data</h3>
+                    <label for="language"><p>Language Name</p></label>
+                    <input id="language" type="text" name="language" placeholder="Danish, German, English.." required />
+
+                    <label for="countrycode"><p>Countrycode</p></label>
+                    <select name="countrycode" id="countrycode" required>
+                        <option value="" selected disabled>--Select Countrycode--</option>
+                        <% for(var i=0; i<cities.length; i++) { %>
+                        <option value="<%= cities[i].countrycode%>"><%= cities[i].countrycode %></option>
+                        <% } %>
+                    </select>
+
+                    <label for="isofficial"><p>Official Language</p></label>
+                    <select name="isofficial" id="isofficial" required>
+                        <option value="" selected disabled>--Select Yes/No--</option>
+                        <option value="T">Yes</option>
+                        <option value="F">No</option>
+                    </select>
+
+                    <label for="percentage"><p>Percentage</p></label>
+                    <input id="percentage" type="text" name="percentage" placeholder="Please enter a percentage.." required />
+
+                    <br />
+                    <input type="submit" value="Create" />
+                </form>
+                
+            <!--Governmentform-->
+                <form id="createGovernmentForm" action="/createGovernmentForm" method="post">
+                    <h3>Create Governmentform Data</h3>
+                    <label for="name"><p>Governmentform</p></label>
+                    <input id="name" type="text" name="name" placeholder="Please enter a Governmentform.." required />
+
+                    <br />
+                    <input type="submit" value="Create" />
+                </form>
+        </main>
+    </body>
+</html>
