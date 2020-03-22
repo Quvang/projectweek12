@@ -1,21 +1,21 @@
-'use strict';
-const mon = require('./mongooseWrap');
-const Country = require('./Country');
+"use strict";
+const mon = require("./mongooseWrap");
+const Country = require("./Country");
 
-exports.getCountries = async function(que, sort) {
-    if (sort === null) sort = { sort: { name: 1 } };
+exports.getCountries = async function (que, sort) {
+    if (sort === null)
+        sort = {sort: {name: 1}};
     try {
-        let cs = await mon.retrieve('localhost', 'world', Country, que, sort);
+        let cs = await mon.retrieve("localhost", "world", Country, que, sort);
         return cs;
     } catch (e) {
         console.log(e);
     }
-};
+}
 
-exports.postCountry = async function(req) {
-    let chk = { name: req.body.name }; // check object for existence
-    let country = new Country({
-        // create obejct in db-format
+exports.postCountry = async function (req) {
+    let chk = { name: req.body.name };  // check object for existence
+    let country = new Country({                     // create obejct in db-format
         code: req.body.code,
         name: req.body.name,
         continent: req.body.continent,
@@ -32,11 +32,11 @@ exports.postCountry = async function(req) {
         capital: null,
         code2: req.body.code2
     });
-    if (req.body.localname === '') country.localname = country.name;
+    if (req.body.localname === "") country.localname = country.name;
     try {
-        let cs = await mon.upsert('localhost', 'world', Country, country, chk);
+        let cs = await mon.upsert("localhost", "world", Country, country, chk);
         return;
     } catch (e) {
         console.log(e);
     }
-};
+}
