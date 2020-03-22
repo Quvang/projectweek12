@@ -27,7 +27,14 @@ router.post('/country', async function(req, res, next) {
 router.get('/city', async function(req, res, next) {
     res.render('city', { title: 'City Data' });
 });
-/* GET City page. */
+
+// City delete
+router.post('/city', async function(req, res, next) {
+    let delCity = await modCities.delCities({name: req.body.sletcity});
+    res.render('city', { title: 'City Data', delCity });
+});
+
+/* GET Language page. */
 router.get('/language', async function(req, res, next) {
     res.render('language', { title: 'Language' });
 });

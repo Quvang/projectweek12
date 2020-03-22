@@ -12,16 +12,14 @@ exports.getCities = async function(que, sort) {
     }
 };
 
-/*
-exports.sletCities = async function(que, sort) {
-    if (sort === null) sort = { sort: { name: 1 } };
+exports.delCities = async function (name) {
     try {
-        let cs = await mon.remove('localhost', 'world', City, que, sort);
+        let cs = await mon.remove("localhost", "world", City, name);
         return cs;
     } catch (e) {
         console.log(e);
     }
-};*/
+}
 
 exports.findNamesakes = async function(arr) {
     let narr = [];

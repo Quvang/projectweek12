@@ -118,18 +118,22 @@ const showDataCity = function (e) {
     let dis = document.createTextNode("District");
     let th4 = document.createElement('th');
     let popu = document.createTextNode("Population");
-    
+    let th5 = document.createElement('th');
+    let del= document.createTextNode("delete");
+
     th1.appendChild(name);
     th2.appendChild(cc);
     th3.appendChild(dis);
     th4.appendChild(popu);
+    th5.appendChild(del);
     tabel.appendChild(th1);
     tabel.appendChild(th2);
     tabel.appendChild(th3);
     tabel.appendChild(th4);
+    tabel.appendChild(th5);
 
     cities.forEach(function(city) {
-        
+
         let tr = document.createElement('tr');
         let td1 = document.createElement('td');
         let name1 = document.createTextNode(city.name);
@@ -139,15 +143,31 @@ const showDataCity = function (e) {
         let dis1 = document.createTextNode(city.district);
         let td4 = document.createElement('td');
         let popu1 = document.createTextNode(city.population);
+        let td5 = document.createElement('td');
+        let form = document.createElement('form');
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "/city");
+
+        let input = document.createElement('input');
+        input.setAttribute("value", city.name);
+        input.setAttribute("name", "sletcity");
+        input.setAttribute("type", "hidden");
+
+        let delB = document.createElement('button');
+        delB.setAttribute('class', "Delete");
 
         td1.appendChild(name1);
         td2.appendChild(cc1);
         td3.appendChild(dis1);
         td4.appendChild(popu1);
+        form.appendChild(input);
+        form.appendChild(delB);
+        td5.appendChild(form);
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
         tr.appendChild(td4);
+        tr.appendChild(td5);
         tabel.appendChild(tr);
     });
 
