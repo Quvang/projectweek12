@@ -2,9 +2,9 @@
 const mon = require('./mongooseWrap');
 const GovernmentForm = require('./GovernmentForm');
 
-exports.getGovernmentForms = async function(req, res, next) {
+exports.getGovernmentForms = async function({}, sort, req, res, next) {
     try {
-        let gf = await mon.retrieve('localhost', 'world', GovernmentForm, {});
+        let gf = await mon.retrieve('localhost', 'world', GovernmentForm, {}, sort);
         return gf;
     } catch (e) {
         console.log(e);
