@@ -2,7 +2,7 @@
 const mon = require('./mongooseWrap');
 const Continent = require('./Continent');
 
-exports.getContinents = async function(sort) {
+exports.getContinents = async function({}, sort) {
     try {
         let cs = await mon.retrieve('localhost', 'world', Continent, {}, sort);
         return cs;
