@@ -130,6 +130,7 @@ const showDataCountry = function (e) {
         input.setAttribute("type", "hidden");
 
         let delB = document.createElement('button');
+        let deltext = document.createTextNode("SLET");
         delB.setAttribute('class', "Delete");
 
         td1.appendChild(name1);
@@ -139,6 +140,7 @@ const showDataCountry = function (e) {
         td5.appendChild(gov1);
         form.appendChild(input);
         form.appendChild(delB);
+        delB.appendChild(deltext);
         td6.appendChild(form);
         tr.appendChild(td1);
         tr.appendChild(td2);
