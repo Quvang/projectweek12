@@ -18,11 +18,10 @@ router.get('/country', async function(req, res, next) {
     res.render('country', { title: 'Country Data', country: country });
 });
 
-// Country delete 
+// Country delete
 router.post('/country', async function(req, res, next) {
-    let delCountry = await modCountry.delCountries({name: req.body.value});
-    console.log("Hey");
-    res.render('country', { title: 'Country Data', delCountry: delCountry });
+    let delCountry = await modCountry.delCountries({name: req.body.slet});
+    res.render('country', { title: 'Country Data', delCountry });
 });
 /* GET City page. */
 router.get('/city', async function(req, res, next) {

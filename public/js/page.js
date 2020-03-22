@@ -92,7 +92,7 @@ const showDataCountry = function (e) {
     let gov = document.createTextNode("Govermentform");
     let th6 = document.createElement('th');
     let del= document.createTextNode("delete");
-    
+
     th1.appendChild(name);
     th2.appendChild(cc);
     th3.appendChild(con);
@@ -107,7 +107,7 @@ const showDataCountry = function (e) {
     tabel.appendChild(th6);
 
     countries.forEach(function(country) {
-        
+
         let tr = document.createElement('tr');
         let td1 = document.createElement('td');
         let name1 = document.createTextNode(country.name);
@@ -128,7 +128,7 @@ const showDataCountry = function (e) {
         input.setAttribute("value", country.name);
         input.setAttribute("name", "slet");
         input.setAttribute("type", "hidden");
-        
+
         let delB = document.createElement('button');
         delB.setAttribute('class', "Delete");
 
@@ -137,8 +137,9 @@ const showDataCountry = function (e) {
         td3.appendChild(con1);
         td4.appendChild(popu1);
         td5.appendChild(gov1);
-        td6.appendChild(form);
+        form.appendChild(input);
         form.appendChild(delB);
+        td6.appendChild(form);
         tr.appendChild(td1);
         tr.appendChild(td2);
         tr.appendChild(td3);
@@ -154,4 +155,3 @@ const showDataCountry = function (e) {
 };
 
 window.addEventListener("load", getContinents);                   // kick off JS
-
